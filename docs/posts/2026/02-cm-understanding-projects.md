@@ -225,7 +225,7 @@ ORMIR was born in 2020 thanks to a [Jupyter Community Workshop](https://blog.jup
 During the workshop, we, as a scientific community, focused on becoming increasingly familiar with best practices in sofware engineering. 
 We invited speakers to give [tutorial and presentations](https://github.com/ORMIRcommunity/2026_3rd_ORMIR_WS/blob/main/README.md#invited-speakers) on the topic, and we worked on putting these principles into practice through code development in our [working groups](https://github.com/ORMIRcommunity/2026_3rd_ORMIR_WS/blob/main/README.md#working-groups). 
 
-For the occasion, I also wrote guidelines on how to use GitHub to contribute to [documentation in Jupyter Book](https://www.ormir.org/code_guidelines/docs-contributing/) and [code](https://www.ormir.org/code_guidelines/gh-contributing/).
+For the occasion, I also wrote guidelines on how to use GitHub to contribute to [documentation in Jupyter Book](https://www.ormir.org/coding_guidelines/docs-contributing/) and [code](https://www.ormir.org/coding_guidelines/gh-contributing/).
 I hope these resources will be useful not only within the ORMIR community but also to others interested in contributing to open-source projects. 
 Feel free to have a look and let me know what you think!
 
