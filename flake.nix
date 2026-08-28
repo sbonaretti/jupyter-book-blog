@@ -18,7 +18,7 @@
         with pkgs; {
           devShells.default = mkShell {
             buildInputs = with pkgs; [
-              nodejs_22
+              mystmd
               libwebp
               imagemagick
             ];
