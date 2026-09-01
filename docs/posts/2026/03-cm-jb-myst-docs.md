@@ -8,15 +8,14 @@ date: 2026-08-31
 license: CC-BY-4.0
 ---
 
-This month, I share some of the work I have been doing to better understand the documentation of Jupyter Book/MyST, where it is hosted on GitHub, and how it can be accessed on the projects' websites — I am doing similar work for the JupyterHub organization, and I will share that content in my next posts.
-
-Among my other activities this month, I joined the Jupyter Community Building Working Group and started working on three events that will take place this fall.
+This month, I share some of the work I have been doing to better understand the  Jupyter Book/MyST documentation, where it is hosted on GitHub, and how it can be accessed through the projects' websites. 
+I also focused on a few other areas of work, including joining the Jupyter Community Building Working Group and starting prepare three events that will take place this fall.
 
 
 ## GitHub repositories and websites hosting Jupyter Book/MyST documentation
 
-There are several repositories in the [Jupyter Book GitHub organization](https://github.com/jupyter-book) whose content converges into the two websites [jupyterbook.org](https://jupyterbook.org/) and [mystmd.org](https://mystmd.org/). 
-(I talked about the differences between Jupyter Book and MyST in my [previous post](./02-cm-understanding-projects)). 
+There are several repositories in the [`Jupyter Book GitHub organization`](https://github.com/jupyter-book) whose content converges into the two websites [jupyterbook.org](https://jupyterbook.org/) and [mystmd.org](https://mystmd.org/). 
+(I talked about the differences between Jupyter Book and MyST in my [previous post](./02-cm-understanding-projects.md)). 
 
 For an overview of the content of each website and where it is located, I created a [Mermaid](https://mermaid.ai/open-source/intro/) diagram showing how the GitHub repositories map to the different sections of the websites and highlighting the intended audience.
 I also created figures illustrating how these sections can be accessed through the websites' navigation.
@@ -27,27 +26,52 @@ Here they are!
 
 The documentation published on [jupyterbook.org](https://jupyterbook.org/) is distributed across four **repositories**, each corresponding to a **different section of the website**.  
 
+
+```mermaid
+flowchart LR;
+    
+    subgraph container [" "]
+        direction LR
+        legend("**Legend:**")
+        gh_org("🏠 GitHub organization")
+        gh_repo("📁 GitHub repository")
+        website("🌐 Website")
+        website_sec("📄 Website section")
+    end
+
+    legend~~~ gh_org ~~~ gh_repo ~~~ website ~~~ website_sec
+    
+    classDef transparent_title fill:none,stroke:none
+        class container transparent_title
+    classDef transparent_block_large_font fill:#ffffff,stroke:none,font-size: 14px
+        class legend, transparent_block_large_font
+    classDef transparent_block fill:#ffffff,stroke:none,font-size: 12px
+        class ,gh_org,gh_repo,website,website_sec transparent_block
+```
+
 ```mermaid
 flowchart TD;
     
     %% organization
-    JB("🐙 Jupyter Book")
+    JB("🏠 Jupyter Book")
 
     %% repos
-    JB_main("🐙 1. jupyter-book/docs")
-    JB_org_repo("🐙 2. jupyterbook.org/docs<br>a./community<br>b./contribute")
-    JB_blog_repo("🐙 3. blog/docs")
-    JB_tc_repo("🐙 4. team-compass")
+    JB_main("📁 1. jupyter-book/docs")
+    JB_org_repo("📁 2. jupyterbook.org/docs<br>(a) community<br>(b) contribute")
+    JB_blog_repo("📁 3. blog/docs")
+    JB_tc_repo("📁 4. team-compass")
 
     %% websites
     JB_org_ws("🌐 jupyterbook.org")
 
     %% sections
-    JB_UG("🌐 1. Jupyter Book<br>User Guide")
-    JB_CommG("🌐 2a. Community Guide")
-    JB_ContG("🌐 2b. Contributing Guide")
-    JB_tc("🌐 3. Team Compass")
-    JB_blog("🌐 4. Blog")
+    JB_UG("📄 1. Jupyter Book<br>User Guide")
+    JB_CommG("📄 2(a) Community Guide")
+    JB_ContG("📄 2(b) Contributing Guide")
+    JB_tc("📄 3. Team Compass")
+    JB_blog("📄 4. Blog")
+
+    
           
     %% links organization-to-repo
     JB-->JB_main
@@ -81,8 +105,8 @@ flowchart TD;
         class JB_CommG,JB_blog green
     classDef blue fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px // blue
         class JB_ContG,JB_tc blue
-
 ```
+
 
 *Diagram 1: GitHub repositories and corresponding sections in jupyterbook.org.
 First layer (top): Jupyter Book GitHub organization (orange). 
@@ -103,12 +127,14 @@ The numbers correspond to the GitHub repositories in the diagram above.*
 
 As it can be deduced by the diagram and figure above, GitHub repositories, website sections, and their access from the navigation bar are related as follows:
 
-- [jupyter-book/docs](https://github.com/jupyter-book/jupyter-book/tree/main/docs) contains the documentation that is rendered in [Jupyter Book User Guide](https://jupyterbook.org/stable), which can be accessed on the website by clicking *Docs* in the navigation bar. 
-- [jupyterbook.org/docs/](https://github.com/jupyter-book/jupyterbook.org/tree/main/docs/) contains the website's community and contribution documentation.
-Specifically, the content in [docs/community](https://github.com/jupyter-book/jupyterbook.org/tree/main/docs/community) is rendered in the [Community Guide](https://jupyterbook.org/community/), which can be accessed by clicking *Community* in the navigation bar.
-The documentation in [docs/contribute](https://github.com/jupyter-book/jupyterbook.org/tree/main/docs/contribute) is rendered in the [Contributing Guide](https://jupyterbook.org/contribute/), which can be accessed by clicking *Contribute* in the navigation bar.
-- [team-compass](https://github.com/jupyter-book/team-compass) contains [The Jupyter Book Team Compass](https://jupyterbook.org/compass/) and can be accessed from *Team compass and governance* in the main page of the [Contributing Guide](https://jupyterbook.org/contribute/)
-- [blog/docs](https://github.com/jupyter-book/blog/tree/main/docs) contains the content of the [Jupyter Book Blog](https://jupyterbook.org/blog), which can be accessed by clicking *Blog* in the navigation bar.
+- [`jupyter-book/docs`](https://github.com/jupyter-book/jupyter-book/tree/main/docs) contains the documentation that is rendered in [Jupyter Book User Guide](https://jupyterbook.org/stable), which can be accessed on the website by clicking *Docs* in the navigation bar. 
+- [`jupyterbook.org/docs/`](https://github.com/jupyter-book/jupyterbook.org/tree/main/docs/) contains the website's community and contribution documentation.
+Specifically, the content in [`docs/community`](https://github.com/jupyter-book/jupyterbook.org/tree/main/docs/community) is rendered in the [Community Guide](https://jupyterbook.org/community/), which can be accessed by clicking *Community* in the navigation bar.
+The documentation in [`docs/contribute`](https://github.com/jupyter-book/jupyterbook.org/tree/main/docs/contribute) is rendered in the [Contributing Guide](https://jupyterbook.org/contribute/), which can be accessed by clicking *Contribute* in the navigation bar.
+- [`team-compass`](https://github.com/jupyter-book/team-compass) contains [The Jupyter Book Team Compass](https://jupyterbook.org/compass/) and can be accessed from *Team compass and governance* in the main page of the [Contributing Guide](https://jupyterbook.org/contribute/)
+- [`blog/docs`](https://github.com/jupyter-book/blog/tree/main/docs) contains the content of the [Jupyter Book Blog](https://jupyterbook.org/blog), which can be accessed by clicking *Blog* in the navigation bar.
+
+To learn more about how content from different repositories comes together on a single website, have a look at Chris Holdgraf's blog post [How we combine multiple repositories into one website at jupyterbook.org](./multi-repo.md)
 
 
 ### Repositories and content for [mystmd.org](https://mystmd.org/)
@@ -116,25 +142,48 @@ The documentation in [docs/contribute](https://github.com/jupyter-book/jupyterbo
 The documentation available on [mystmd.org](https://mystmd.org/) is spread across four **repositories**, each contributing content to a **specific section of the website**.
 
 ```mermaid
+flowchart LR;
+    
+    subgraph container [" "]
+        direction LR
+        legend("**Legend:**")
+        gh_org("🏠 GitHub organization")
+        gh_repo("📁 GitHub repository")
+        website("🌐 Website")
+        website_sec("📄 Website section")
+    end
+
+    legend~~~ gh_org ~~~ gh_repo ~~~ website ~~~ website_sec
+    
+    classDef transparent_title fill:none,stroke:none
+        class container transparent_title
+    classDef transparent_block_large_font fill:#ffffff,stroke:none,font-size: 14px
+        class legend, transparent_block_large_font
+    classDef transparent_block fill:#ffffff,stroke:none,font-size: 12px
+        class ,gh_org,gh_repo,website,website_sec transparent_block
+```
+
+```mermaid
 flowchart TD;
     
     %% organization
-    JB("🐙 Jupyter Book")
+    JB("🏠 Jupyter Book")
 
     %% repos
-    myst_main_repo("🐙 1. mystmd/docs")
-    myst_org_repo("🐙 2. mystmd.org/content")
-    myst_tran_repo("🐙 3. mystmd/packages<br>3a.jtex/docs<br>3b./myst-transforms/docs")
-    myst_specs_repo("🐙 4. myst-spec/docs")
+    myst_main_repo("📁 1. mystmd/docs")
+    myst_org_repo("📁 2. mystmd.org/content")
+    myst_tran_repo("📁 3. mystmd/packages/<br>3(a). jtex/docs<br>3(b). myst-transforms/docs")
+    myst_specs_repo("📁 4. myst-spec/docs")
     
     %% websites
     myst_org_ws("🌐 mystmd.org")
 
     %% sections
-    myst_main("🌐 1. MyST Markdown")
-    myst_org("🌐 2a.Projects & Ecosystem Overview<br>2b.MyST Gallery")
-    myst_tran("🌐 3. MyST Transforms")
-    myst_specs("🌐 4. MyST Specification")
+    myst_main("📄 1. MyST Markdown")
+    myst_org("📄 2(a). Projects & Ecosystem Overview<br>2(b). MyST Gallery")
+    myst_jtex("📄 3(a). JTeX")
+    myst_tran("📄 3(b). MyST Transforms")
+    myst_specs("📄 4. MyST Specification")
         
     %% links organization-to-repo
     JB-->myst_main_repo
@@ -151,6 +200,7 @@ flowchart TD;
     %%links website-to-section
     myst_org_ws-->myst_main
     myst_org_ws-->myst_org
+    myst_org_ws-->myst_jtex
     myst_org_ws-->myst_tran
     myst_org_ws-->myst_specs
      
@@ -166,7 +216,7 @@ flowchart TD;
     classDef green fill:#d5f5d5,stroke:#2e8b57,stroke-width:2px // green
         class myst_org,myst_main green
     classDef blue fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px // blue
-        class myst_theme,myst_tran,myst_specs blue
+        class myst_theme,myst_jtex,myst_tran,myst_specs blue
 ```
 
 *Figure: 
@@ -186,11 +236,13 @@ The numbers correspond to the GitHub repositories in the diagram above.*
 
 GitHub repositories, website sections, and their access points in the navigation bar are related as follows:
 
-- [mystmd/docs](https://github.com/jupyter-book/mystmd/tree/main/docs) contains the documentation that is rendered in [MyST Markdown](https://mystmd.org/guide), which can be accessed on the website by clicking *Guide* in the navigation bar. 
-- [mystmd.org](https://github.com/jupyter-book/mystmd.org) contains the website's landing page, as well as and the pages *Projects & Ecosystem Overview*, and *MyST Gallery*.
-- Within [mystmd/packages](https://github.com/jupyter-book/mystmd/tree/main/packages/), [jtex/docs](https://github.com/jupyter-book/mystmd/tree/main/packages/jtex/docs) contains the [JTEX](https://mystmd.org/jtex) documentation, while [myst-transforms](https://github.com/jupyter-book/mystmd/tree/main/packages/myst-transforms) contains the [MyST Transforms](https://mystmd.org/myst-transforms) documentation. 
+- [`mystmd/docs`](https://github.com/jupyter-book/mystmd/tree/main/docs) contains the documentation that is rendered in [MyST Markdown](https://mystmd.org/guide), which can be accessed on the website by clicking *Guide* in the navigation bar. 
+- [`mystmd.org`](https://github.com/jupyter-book/mystmd.org) contains the website's landing page, as well as and the pages *Projects & Ecosystem Overview*, and *MyST Gallery*.
+- Within [`mystmd/packages`](https://github.com/jupyter-book/mystmd/tree/main/packages/),
+[`jtex/doc`](https://github.com/jupyter-book/mystmd/tree/main/packages/jtex/docs) contains the [JTEX](https://mystmd.org/jtex) documentation,
+while [`myst-transforms`](https://github.com/jupyter-book/mystmd/tree/main/packages/myst-transforms) contains the [MyST Transforms](https://mystmd.org/myst-transforms) documentation. 
 Bot can be accessed from the *Project* drop-down menu in the navigation bar.
-- [myst-spec/docs](https://github.com/jupyter-book/myst-spec) contains the documentation that is rendered in [MyST Specification](https://mystmd.org/spec)
+- [`myst-spec/docs`](https://github.com/jupyter-book/myst-spec) contains the documentation that is rendered in [MyST Specification](https://mystmd.org/spec)
 
 
 ### Some considerations
