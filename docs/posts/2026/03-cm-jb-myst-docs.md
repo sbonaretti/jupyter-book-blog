@@ -1,15 +1,15 @@
 ---
-title: Understanding the documentation of Jupyter Book and MyST
+title: Understanding the documentation of Jupyter Book and MyST  
 authors:
-  - name: Serena Bonaretti
-    github: sbonaretti
-    url: https://sbonaretti.github.io/
-date: 2026-08-31
-license: CC-BY-4.0
+  - name: Serena Bonaretti  
+    github: sbonaretti  
+    url: https://sbonaretti.github.io/   
+date: 2026-08-31  
+license: CC-BY-4.0  
 ---
 
 This month, I share some of the work I have been doing to better understand the  Jupyter Book/MyST documentation, where it is hosted on GitHub, and how it can be accessed through the projects' websites. 
-I also focused on a few other areas of work, including joining the Jupyter Community Building Working Group and starting prepare three events that will take place this fall.
+I also report on a few other areas of work, such as joining the Jupyter Community Building Working Group and starting prepare three events that will take place this fall.
 
 
 ## GitHub repositories and websites hosting Jupyter Book/MyST documentation
@@ -134,7 +134,7 @@ The documentation in [`docs/contribute`](https://github.com/jupyter-book/jupyter
 - [`team-compass`](https://github.com/jupyter-book/team-compass) contains [The Jupyter Book Team Compass](https://jupyterbook.org/compass/) and can be accessed from *Team compass and governance* in the main page of the [Contributing Guide](https://jupyterbook.org/contribute/)
 - [`blog/docs`](https://github.com/jupyter-book/blog/tree/main/docs) contains the content of the [Jupyter Book Blog](https://jupyterbook.org/blog), which can be accessed by clicking *Blog* in the navigation bar.
 
-To learn more about how content from different repositories comes together on a single website, have a look at Chris Holdgraf's blog post [How we combine multiple repositories into one website at jupyterbook.org](./multi-repo.md)
+To learn more about **how content from different repositories comes together on a single website**, have a look at [Chris Holdgraf](https://chrisholdgraf.com/)'s blog post [How we combine multiple repositories into one website at jupyterbook.org](./multi-repo.md)
 
 
 ### Repositories and content for [mystmd.org](https://mystmd.org/)
@@ -171,7 +171,7 @@ flowchart TD;
 
     %% repos
     myst_main_repo("📁 1. mystmd/docs")
-    myst_org_repo("📁 2. mystmd.org/content")
+    myst_org_repo("📁 2. mystmd.org")
     myst_tran_repo("📁 3. mystmd/packages/<br>3(a). jtex/docs<br>3(b). myst-transforms/docs")
     myst_specs_repo("📁 4. myst-spec/docs")
     
@@ -180,7 +180,7 @@ flowchart TD;
 
     %% sections
     myst_main("📄 1. MyST Markdown")
-    myst_org("📄 2(a). Projects & Ecosystem Overview<br>2(b). MyST Gallery")
+    myst_org("📄 2(a). Projects & Ecosystem Overview<br>2(b). MyST Gallery<br>2(c). Try MyST")
     myst_jtex("📄 3(a). JTeX")
     myst_tran("📄 3(b). MyST Transforms")
     myst_specs("📄 4. MyST Specification")
@@ -237,11 +237,11 @@ The numbers correspond to the GitHub repositories in the diagram above.*
 GitHub repositories, website sections, and their access points in the navigation bar are related as follows:
 
 - [`mystmd/docs`](https://github.com/jupyter-book/mystmd/tree/main/docs) contains the documentation that is rendered in [MyST Markdown](https://mystmd.org/guide), which can be accessed on the website by clicking *Guide* in the navigation bar. 
-- [`mystmd.org`](https://github.com/jupyter-book/mystmd.org) contains the website's landing page, as well as and the pages *Projects & Ecosystem Overview*, and *MyST Gallery*.
+- [`mystmd.org`](https://github.com/jupyter-book/mystmd.org) contains the website's landing page, as well as and the pages [Projects & Ecosystem Overview](https://mystmd.org/overview/ecosystem) and [MyST Gallery](https://mystmd.org/overview/gallery), which can be accessed by clicking *Overview* in the navigation bar. It also contains the [Try MyST](https://mystmd.org/sandbox) tool.
 - Within [`mystmd/packages`](https://github.com/jupyter-book/mystmd/tree/main/packages/),
 [`jtex/doc`](https://github.com/jupyter-book/mystmd/tree/main/packages/jtex/docs) contains the [JTEX](https://mystmd.org/jtex) documentation,
 while [`myst-transforms`](https://github.com/jupyter-book/mystmd/tree/main/packages/myst-transforms) contains the [MyST Transforms](https://mystmd.org/myst-transforms) documentation. 
-Bot can be accessed from the *Project* drop-down menu in the navigation bar.
+Both can be accessed from the *Project* drop-down menu in the navigation bar.
 - [`myst-spec/docs`](https://github.com/jupyter-book/myst-spec) contains the documentation that is rendered in [MyST Specification](https://mystmd.org/spec)
 
 
